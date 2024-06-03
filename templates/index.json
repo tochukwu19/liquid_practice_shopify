@@ -1,13 +1,81 @@
 {
     "sections": {
-        "featured-collection": {
-            "type": "featured-collection",
-            "settings": {
-                "featured_collection": "all"
-            }
+        "hero": {
+            "type": "template-hero",
+            "blocks": {
+                "heading": {
+                    "type": "Hero_Heading"
+                },
+                "subheading": {
+                    "type": "Hero_Subheading"
+                },
+                "button": {
+                    "type": "Hero_Button"
+                }
+            }, "block_order": [
+                "heading",
+                "subheading",
+                "button"
+            ]
+        }, 
+        "meet": {
+            "type": "template-meet"
+        },
+        "features": {
+            "type": "template-features",
+            "blocks": {
+                "card1": {
+                    "type": "card_1",
+                    "title": "Feature 1",
+                    "description": "This is a feature description"
+                },
+                "card2": {
+                    "type": "card_2",
+                    "title": "Feature 2",
+                    "description": "This is a feature description"
+                },
+                "card3": {
+                    "type": "card_3",
+                    "title": "Feature 3",
+                    "description": "This is a feature description"
+                },
+                "card4": {
+                    "type": "card_4",
+                    "title": "Feature 4",
+                    "description": "This is a feature description"
+                },
+                "card5": {
+                    "type": "card_5",
+                    "title": "Feature 5",
+                    "description": "This is a feature description"
+                },
+                "card6": {
+                    "type": "card_6",
+                    "title": "Feature 6",
+                    "description": "This is a feature description"
+                }
+            }, 
+            "block_order": [
+                "card1",
+                "card2",
+                "card3",
+                "card4",
+                "card5",
+                "card6"
+            ]
+        },
+        "works": {
+            "type": "template-works"    
+        },
+        "science": {
+            "type": "template-science"
         }
     },
     "order": [
-        "featured-collection"
+        "hero",
+        "meet",
+        "features",
+        "works",
+        "science"
     ]
 }

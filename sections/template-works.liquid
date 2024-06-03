@@ -1,0 +1,166 @@
+{% style %}
+  .newcards > div:nth-child(n) {
+    background: linear-gradient(270deg, rgba(254,152,53,0.2) 0%, #f3f3f3 40%);
+  }
+
+  .newcards > div:nth-child(2n) {
+    background: linear-gradient(270deg, rgba(205,147,152,1) 0%, #f3f3f3 40%);
+  }
+
+  .newcards > div:nth-child(3n) {
+    background: linear-gradient(270deg, rgba(186,213,250,1) 0%, #f3f3f3 40%);
+  }
+
+  .newcards > div:nth-child(4n) {
+    background: linear-gradient(270deg, rgba(205,147,152,1) 0%, #f3f3f3 40%);
+  }
+
+  .bigNo {
+    background: -webkit-linear-gradient(pink, aquamarine, orange);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+{% endstyle %}
+
+<div class="w-full h-[auto]">
+  <div class="w-[80%] mx-auto">
+    <h1 class="text-center text-3xl md:text-6xl my-[100px]">How it works</h1>
+    <div class="newcards grid grid-cols-1 md:grid-cols-2 justify-center gap-4 [&>div]:w-auto [&>div]:min-h-[350px] [&>div]:py-4  mt-4">
+      <div class="bg-gray-700 p-4 flex justify-center flex-col rounded-[30px] shadow-sm">
+        <div class=" bigNo">
+          <h2 class="text-6xl">01</h2>
+        </div>
+        <div class="w-[70%]">
+          <h2 class="text-4xl text-wrap mb-2">{{ section.settings.card_1_title }}</h2>
+          <p>{{ section.settings.card_1_description }}</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-700 p-4 flex justify-center flex-col rounded-[30px] shadow-sm gap-4">
+        <h2 class="text-6xl bigNo">02</h2>
+        <div class="w-[70%]">
+          <h2 class="text-4xl text-wrap mb-2">{{ section.settings.card_2_title }}</h2>
+          <p>{{ section.settings.card_2_description  }}</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-700 p-4 flex justify-center flex-col rounded-[30px] shadow-sm gap-4">
+        <h2 class="text-6xl bigNo">03</h2>
+        <div class="w-[70%]">
+          <h2 class="text-4xl text-wrap mb-2">{{ section.settings.card_3_title}}</h2>
+          <p>{{ section.settings.card_3_description }}
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-gray-700 p-4 flex justify-center flex-col rounded-[30px] shadow-sm gap-4">
+        <h2 class="text-6xl bigNo">04</h2>
+        <div class="w-[70%]">
+          <h2 class="text-4xl text-wrap mb-2">{{ section.settings.card_4_title}}
+          </h2>
+          <p>{{ section.settings.card_4_description}}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="mx-auto my-16 block text-white bg-black py-3 px-6 rounded-md uppercase font-medium">Learn more</button>
+  </div>
+</div>
+
+<div class="w-full h-[400px] flex items-center justify-center my-16">
+  <div class="w-[80%] mx-auto">
+    <h1 class="text-3xl md:text-6xl text-center mb-16">Backed By Science</h1>
+    <div class="w-full flex justify-between items-center [&>div]:h-[150px] [&>div]:flex [&>div]:items-center [&>div]:flex-col [&>div>h2]:text-3xl  md:[&>div>h2]:text-6xl [&>div>p]:text-2xl md:[&>div>p]:text-4xl">
+      <div class="font-medium">
+        <h2>
+          100,000+
+        </h2>
+        <p>users</p>
+      </div>
+
+      <hr class="bg-gray-200 h-[100px] w-[2px]"/>
+
+      <div class="font-medium">
+        <h2>
+          1 million+
+        </h2>
+        <p>light sessions
+        </p>
+      </div>
+
+      <hr class="bg-gray-200 h-[100px] w-[2px]"/>
+
+      <div class="font-medium">
+        <h2>
+          15+
+        </h2>
+        <p>clinical trials*</p>
+      </div>
+    </div>
+
+    <p class="text-gray-700 mb-16 mt-8 text-center text-xl md:text-2xl">*Independent studies have shown an increase in energy levels, elevated mood and better sleep.</p>
+  </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Template Works",
+    "settings": [
+        {
+            "type": "text",
+            "id": "works_title",
+            "label": "Works Title",
+            "default": "How it works"
+        },
+        {
+            "type": "text",
+            "id": "card_1_title",
+            "label": "Card 1 Title",
+            "default": "Align your lifestyle with your biology"
+        },
+        {
+            "type": "text",
+            "id": "card_1_description",
+            "label": "Card 1 Description",
+            "default": "AYO automatically works to align your lifestyle with your circadian rhythm for better sleep, more energy, and improved health. Enjoy personal recommendations for light exposure, optimal sleep-wake times, mealtimes and many more!"
+        },
+        {
+            "type": "text",
+            "id": "card_2_title",
+            "label": "Card 2 Title",
+            "default": "Discover your body’s natural rhythm"
+        },
+        {
+            "type": "text",
+            "id": "card_2_description",
+            "label": "Card 2 Description",
+            "default": "Download the AYO app (early access) to learn about your Circadian Health and find out if you are in sync with your biological clock. Discover your body’s unique sleep-wake cycle and natural sleep need as well as how your natural rhythm impacts your everyday life."
+        },
+        {
+            "type": "text",
+            "id": "card_3_title",
+            "label": "Card 3 Title",
+            "default": "Use AYO"
+        },
+        {
+            "type": "text",
+            "id": "card_3_description",
+            "label": "Card 3 Description",
+            "default": "Awaken body and mind with gentle blue light that stimulates the eyes, boosts your mood and raises energy levels just like a beautiful sunny day outside."
+        },
+        {
+            "type": "text",
+            "id": "card_4_title",
+            "label": "Card 4 Title",
+            "default": "Stay in-sync and thrive"
+        },
+        {
+            "type": "text",
+            "id": "card_4_description",
+            "label": "Card 4 Description",
+            "default": "The AYO app will keep you motivated all year long through seasonal and lifestyle changes. Feel long-lasting improvements as you experience a healthier, happier you."
+        }]
+}
+{% endschema %}

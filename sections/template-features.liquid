@@ -1,0 +1,218 @@
+{% style %}
+  .cards > div:nth-child(n) {
+    background: linear-gradient(201deg, rgba(254,152,53,0.2) 0%, rgba(255,255,255,1) 40%);
+  }
+
+  .cards > div:nth-child(2n) {
+    background: linear-gradient(201deg, rgba(205,147,152,1) 0%, rgba(255,255,255,1) 40%);
+  }
+
+  .cards > div:nth-child(3n) {
+    background: linear-gradient(201deg, rgba(186,213,250,1) 0%, rgba(255,255,255,1) 40%);
+  }
+
+  .cards > div:nth-child(4n) {
+    background: linear-gradient(201deg, rgba(205,147,152,1) 0%, rgba(255,255,255,1) 40%);
+  }
+
+  .cards > div:nth-child(5n) {
+    background: linear-gradient(201deg, rgba(213,198,215,1) 0%, rgba(255,255,255,1) 40%);
+  }
+
+  .cards > div:nth-child(6n) {
+    background: linear-gradient(201deg, rgba(226,225,197,1) 0%, rgba(255,255,255,1) 40%);
+  }
+{% endstyle %}
+
+<div class="w-full h-[auto] pt-32 pb-8 bg-[#F2F2F2]">
+  <div class="w-[80%] mx-auto">
+    <h1 class="text-3xl text-wrap md:text-5xl max-w-xl mx-auto text-center mb-[50px]">
+      More than 70% of people suffer from circadian disruption. This is linked to...
+    </h1>
+
+    <div class="cards grid grid-cols-1 md:grid-cols-3 justify-center gap-4 [&>div]:w-auto [&>div]:h-[350px] mt-4">
+
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when "card_1" %}
+            <div class="bg-gray-700 p-4 flex justify-around flex-col rounded-[30px] shadow-sm">
+              {% render "icon-sleep" %}
+              <div>
+                <h2 class="text-4xl text-wrap mb-2">{{ block.settings.title }}</h2>
+                <p>{{ block.settings.description }}</p>
+              </div>
+            </div>
+
+          {% when "card_2" %}
+            <div class="bg-gray-700 p-4 flex justify-around flex-col rounded-[30px] shadow-sm">
+              {% render "icon-bolt" %}
+              <div>
+                <h2 class="text-4xl text-wrap mb-2">{{ block.settings.title }}</h2>
+                <p>{{ block.settings.description }}</p>
+              </div>
+            </div>
+
+          {% when "card_3" %}
+            <div class="bg-gray-700 p-4 flex justify-around flex-col rounded-[30px] shadow-sm">
+              {% render "icon-weight" %}
+              <div>
+                <h2 class="text-4xl text-wrap mb-2">{{ block.settings.title }}</h2>
+                <p>{{ block.settings.description }}</p>
+              </div>
+            </div>
+
+          {% when "card_4" %}
+            <div class="bg-gray-700 p-4 flex justify-around flex-col rounded-[30px] shadow-sm">
+              {% render "icon-sad" %}
+              <div>
+                <h2 class="text-4xl text-wrap mb-2">{{ block.settings.title }}</h2>
+                <p>{{ block.settings.description }}</p>
+              </div>
+            </div>
+
+          {% when "card_5" %}
+            <div class="bg-gray-700 p-4 flex justify-around flex-col rounded-[30px] shadow-sm">
+              {% render "icon-love" %}
+              <div>
+                <h2 class="text-4xl text-wrap mb-2">{{ block.settings.title }}</h2>
+                <p>{{ block.settings.description }}</p>
+              </div>
+            </div>
+
+          {% when "card_6" %}
+            <div class="bg-gray-700 p-4 flex justify-around flex-col rounded-[30px] shadow-sm">
+              {% render "icon-earth" %}
+              <div>
+                <h2 class="text-4xl text-wrap mb-2">{{ block.settings.title }}</h2>
+                <p>{{ block.settings.description }}</p>
+              </div>
+            </div>
+        {% else %}
+
+          {% endcase %}
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+
+  {% schema %}
+    {
+      "name": "Template Features",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Template Features"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "card_1",
+          "name": "Card 1",
+          "limit": 2,
+          "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Title",
+              "default": "Sleep Problems"
+            }, {
+              "type": "text",
+              "id": "description",
+              "label": "Description",
+              "default": "Misaligned circadian rhythm often is associated with difficulties falling asleep, waking up and excessive daytime sleepiness."
+            }
+          ]
+        },
+        {
+          "type": "card_2",
+          "name": "Card 2",
+          "limit": 2,
+          "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Title",
+              "default": "Low Energy"
+            }, {
+              "type": "text",
+              "id": "description",
+              "label": "Description",
+              "default": "Circadian rhythm disorders are associated with fatigue and reduced cellular energy production."
+            }
+          ]
+        },
+        {
+          "type": "card_3",
+          "name": "Card 3",
+          "limit": 2,
+          "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Title",
+              "default": "Weight Gain"
+            }, {
+              "type": "text",
+              "id": "description",
+              "label": "Description",
+              "default": "An irregular circadian rhythm greatly contributes to obesity, insulin resistance and metabolic disorders."
+            }
+          ]
+        },
+        {
+          "type": "card_4",
+          "name": "Card 4",
+          "limit": 2,
+          "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Title",
+              "default": "Low Mood"
+            }, {
+              "type": "text",
+              "id": "description",
+              "label": "Description",
+              "default": "Circadian disruption often contributes to depression, anxiety, bipolar disorder and seasonal affective disorder."
+            }
+          ]
+        }, {
+          "type": "card_5",
+          "name": "Card 5",
+          "limit": 2,
+          "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Title",
+              "default": "Aging"
+            }, {
+              "type": "text",
+              "id": "description",
+              "label": "Description",
+              "default": "Out-of-sync circadian rhythm is associated with aging and morbidity while good circadian health is paramount to longevity."
+            }
+          ]
+        }, {
+          "type": "card_6",
+          "name": "Card 6",
+          "limit": 2,
+          "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Title",
+              "default": "+ Every modern disease"
+            }, {
+              "type": "text",
+              "id": "description",
+              "label": "Description",
+              "default": "From cardiovascular disorders to cancer. Sounds incredible? Just Google “circadian rhythm” + any ailment."
+            }
+          ]
+        }
+
+      ]
+    }
+  {% endschema %}

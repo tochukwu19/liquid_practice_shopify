@@ -1,0 +1,66 @@
+{% style %}
+  .subtitle > span {
+    background: linear-gradient(to right, #FEAB4D, #DDEAD0);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+{% endstyle %}
+
+<div class="h-auto w-full">
+  <div class="w-[90%] md:max-w-2xl  flex justify-center items-center mx-auto flex-col my-4 md:my-0">
+    <h1 class="text-3xl md:text-5xl">{{ section.settings.meet_title }}</h1>
+
+    <p class="text-xl md:text-3xl my-4 subtitle">
+      {{ section.settings.meet_subtitle_1 }}
+      <span>{{ section.settings.meet_subtitle_2 }}</span>
+    </p>
+
+    <button type="button" class="text-white bg-black py-3 px-6 rounded-md uppercase font-medium">{{ section.settings.meet_button_text }}</button>
+
+    {% if section.settings.meet_image == blank %}
+      <img src="{{ 'meet.jpg' | file_img_url: "large" }}" class="w-full h-auto my-4" />
+
+    {% else %}
+
+      <img src="{{ section.settings.meet_image | img_url: 'large' }}" class="w-full h-auto my-4" />
+
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Meet Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "meet_title",
+        "label": "Meet Title",
+        "default": "Meet SUO+"
+      },
+      {
+        "type": "text",
+        "id": "meet_subtitle_1",
+        "label": "Meet Subtitle 1",
+        "default": "Achieve your health and wellness goals by using your own biology and"
+      },
+      {
+        "type": "text",
+        "id": "meet_subtitle_2",
+        "label": "Meet Subtitle 2",
+        "default": "the power of circadian light therapy."
+      },
+      {
+        "type": "text",
+        "id": "meet_button_text",
+        "label": "Meet Button Text",
+        "default": "Learn more"
+      }, {
+        "type": "image_picker",
+        "id": "meet_image",
+        "label": "Meet Image",
+        "info": "Upload a high-quality image for the meet section."
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,91 @@
+{% style %}
+  .hero {
+    background: rgb(254, 152, 53);
+    background: linear-gradient(36deg, rgba(254,152,53,0.5) 8%, rgba(0,0,0,0.1) 100%), url("{% if section.settings.hero_image == blank %} https://images.pexels.com/photos/7180667/pexels-photo-7180667.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1 {% else %} {{ section.settings.hero_image | img_url: '1920x1080' }} {% endif"%}"); background-size: cover; background-repeat: no-repeat; background-position: center; display: flex; justify-content: center; align-items: center; }
+{% endstyle %}
+
+<div class="hero mx-auto h-[700px] w-[90%] rounded-[30px] flex items-center justify-start">
+  <div class="text-white w-[90%]">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when "Hero_Heading" %}
+          <h1 class="text-3xl md:text-6xl font-bold md:font-medium max-w-xl">
+            {{ section.settings.hero_title }}
+          </h1>
+
+        {% when "Hero_Subheading" %}
+          <p class="text-xl md:text-2xl max-w-xl py-2">{{ section.settings.hero_subtitle }}</p>
+
+        {% when "Hero_Button" %}
+          <button type="button" class="text-white bg-black py-3 px-6 rounded-md uppercase font-medium">{{ section.settings.hero_button_text }}</button>
+
+          {% else %}
+
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+{% if section.settings.show_sponsors %}
+  <div class="sponsors w-[80%] mx-auto h-auto md:h-32 my-4 flex justify-between items-center flex-wrap">
+    <img src="{{ 'cnn.png' |  file_img_url  }}" />
+    <img src="{{ 'huffpost.png' |  file_img_url  }}" />
+    <img src="{{ 'inc.png' |  file_img_url  }}" />
+    <img src="{{ 'wsj.png' |  file_img_url  }}" />
+    <img src="{{ 'sleeptech.png' |  file_img_url  }}" />
+    <img src="{{ 'menshealth.png' |  file_img_url  }}" />
+  </div>
+{% endif %}
+
+
+{% schema %}
+  {
+    "name": "Hero Section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "hero_image",
+        "label": "Hero Image",
+        "info": "Upload a high-quality image for the hero section."
+      },
+      {
+        "type": "text",
+        "id": "hero_title",
+        "label": "Hero Title",
+        "default": "Sleep Better, Boost Energy, Embrace Wellness"
+      },
+      {
+        "type": "text",
+        "id": "hero_subtitle",
+        "label": "Hero Subtitle",
+        "default": "Become healthier, happier, and more active with the World’s First Circadian Health Wearable."
+      },
+      {
+        "type": "text",
+        "id": "hero_button_text",
+        "label": "Hero Button Text",
+        "default": "Buy Suo+"
+      }, {
+        "type": "checkbox",
+        "id": "show_sponsors",
+        "label": "Show Sponsors",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "Hero_Heading",
+        "name": "heading",
+        "limit": 1
+      }, {
+        "type": "Hero_Subheading",
+        "name": "subheading",
+        "limit": 1
+      }, {
+        "type": "Hero_Button",
+        "name": "button",
+        "limit": 1
+      }
+    ]
+  }
+{% endschema %}

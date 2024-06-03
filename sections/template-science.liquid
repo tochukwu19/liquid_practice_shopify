@@ -1,0 +1,71 @@
+{% style %}
+  .science > .dark {
+    background: linear-gradient(180deg, #fff 20%, rgba(0,0,0,0.1) 60%), url("{% if section.settings.hero_image == blank %} https://cdn.shopify.com/s/files/1/0660/6222/1498/files/science.jpg?v=1717358096 {% else %} {{ section.settings.hero_image | img_url: '1920x1080' }} {% endif"%}"); background-size: cover; background-repeat: no-repeat; background-position: center; } 
+    
+    .science > .light { 
+    background: linear-gradient(0deg, rgba(0,0,0,.1) 20%, #000 60%), url("{% if section.settings.hero_image == blank %} https://cdn.shopify.com/s/files/1/0660/6222/1498/files/science.jpg?v=1717358096 {% else %} {{ section.settings.hero_image | img_url: '1920x1080' }} {% endif"%}"); background-size: cover; background-repeat: no-repeat; background-position: center; }
+
+    .science-header > h1 > span {
+    background: linear-gradient(to right, #FEAB4D, #DDEAD0);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+{% endstyle %}
+
+
+<div class="h-auto w-full science" x-data="{darkMode: true }">
+  <div :class="darkMode ? 'dark science-container w-[80%] mx-auto h-[800px] rounded-[30px] bg-gradient-to-b from-gray-300 to-gray-0 pt-[40px]' : 'light science-container w-[80%] mx-auto h-[800px] rounded-[30px] bg-gradient-to-b from-gray-300 to-gray-0 pt-[40px]'">
+
+    {% if section.settings.show_dark_mode == true %}
+
+    <div class="w-fit flex justify-around items-center bg-gradient-to-b from-gray-300 to-gray-0 p-2 rounded-[15px]
+    [&>p]:px-8 [&>p]:py-2 [&>p]:rounded-[15px] mx-auto my-4 gap-2 [&>p]:cursor-pointer">
+      <p @click="darkMode = true" :class="darkMode ? 'bg-black text-white' : 'bg-white text-black'">Day</p>
+      <p @click="darkMode = false" :class="!darkMode ? 'bg-black text-white' : 'bg-white text-black'">Night</p>
+    </div>
+
+    {% endif %}
+
+    <div class="w-[70%] mx-auto science-header">
+      <h1 :class="!darkMode ? 'text-2xl md:text-5xl text-center my-8 text-white [&>*]:text-white' : 'text-2xl md:text-5xl text-center my-8 text-black [&>*]:text-black'">AYO uses the latest developments in light therapy and Chronobiology to
+        <span>empower your day</span>
+      </h1>
+
+      <div :class="!darkMode ? 'flex justify-between items-center [&>div]:flex [&>div]:justify-center [&>div]:items-center [&>div]:flex-col md:[&>div>h2]:text-2xl gap-4 text-center [&>*]:text-white' : 'flex justify-between items-center [&>div]:flex [&>div]:justify-center [&>div]:items-center [&>div]:flex-col md:[&>div>h2]:text-2xl gap-4 text-center [&>*]:text-black'">
+        <div>
+          {% render "icon-earth" %}
+          <h2>Awaken feeling rejuvenated</h2>
+        </div>
+
+        <div>
+          {% render "icon-bolt" %}
+          <h2>Have more energy</h2>
+        </div>
+
+        <div>
+          {% render "icon-sleep" %}
+          <h2>Improve your sleep quality</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Science Section",
+  "settings": [
+      {
+        "type": "image_picker",
+        "id": "hero_image",
+        "label": "Hero Image"
+      },{
+        "type": "checkbox",
+        "id": "show_dark_mode",
+        "label": "Show Dark Mode",
+        "default": true
+      }
+    ]
+}
+{% endschema %}
