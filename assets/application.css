@@ -1792,6 +1792,14 @@ video {
     height: 24rem;
   }
 
+  .md\:h-\[400px\] {
+    height: 400px;
+  }
+
+  .md\:h-\[800px\] {
+    height: 800px;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
   }
@@ -2056,6 +2064,24 @@ video {
 .\[\&\>div\]\:py-4>div {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.\[\&\>hr\]\:hidden>hr {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .md\:\[\&\>hr\]\:visible>hr {
+    visibility: visible;
+  }
+
+  .md\:\[\&\>hr\]\:block>hr {
+    display: block;
+  }
+
+  .md\:\[\&\>hr\]\:hidden>hr {
+    display: none;
+  }
 }
 
 .\[\&\>p\]\:cursor-pointer>p {
