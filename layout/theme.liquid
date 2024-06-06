@@ -7,7 +7,7 @@
     <meta name="description" content="{{ page_description | escape }}">
     <link rel="canonical" href="{{ canonical_url }}">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-  {{ content_for_header }}
+    {{ content_for_header }}
     <!-- Header hook for plugins -->
     {{ 'application.css' | asset_url | stylesheet_tag }}
     {{ 'application.js' | asset_url | script_tag }}
@@ -20,13 +20,14 @@
       }
 
       {% assign body_font = settings.typography_font %} {{ body_font | font_face }}
-      
+
       *, body {
-        font-family: {{ body_font.family }}, 
+        font-family: {{ body_font.family }},
         {{ body_font.fallback_families }};
       }
-
     </style>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
   </head>
   <body>
     {% section 'template-announcement' %}
@@ -35,5 +36,10 @@
       {{ content_for_layout }}
     </main>
     {% section 'footer' %}
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
