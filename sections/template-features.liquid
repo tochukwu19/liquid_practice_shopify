@@ -26,7 +26,7 @@
 
 <div class="w-full h-[auto] pt-32 pb-8 bg-[#F2F2F2]">
   <div class="w-[80%] mx-auto">
-    <h1 class="text-3xl text-wrap md:text-5xl max-w-xl mx-auto text-center mb-[50px]">
+    <h1 class="text-3xl text-wrap md:text-5xl max-w-xl mx-auto text-center mb-[50px]" data-aos="zoom-in-down">
       More than 70% of people suffer from circadian disruption. This is linked to...
     </h1>
 
@@ -35,7 +35,7 @@
       {% for block in section.blocks %}
         {% case block.type %}
           {% when "card_1" %}
-            <div class="bg-gray-700 p-4 flex justify-around flex-col rounded-[30px] shadow-sm">
+            <div class="bg-gray-700 p-4 flex justify-around flex-col rounded-[30px] shadow-sm" data-aos="fade-down">
               {% render "icon-sleep" %}
               <div>
                 <h2 class="text-4xl text-wrap mb-2">{{ block.settings.title }}</h2>
@@ -44,7 +44,7 @@
             </div>
 
           {% when "card_2" %}
-            <div class="bg-gray-700 p-4 flex justify-around flex-col rounded-[30px] shadow-sm">
+            <div class="bg-gray-700 p-4 flex justify-around flex-col rounded-[30px] shadow-sm" data-aos="fade-down" data-aos-delay="100">
               {% render "icon-bolt" %}
               <div>
                 <h2 class="text-4xl text-wrap mb-2">{{ block.settings.title }}</h2>
@@ -53,7 +53,7 @@
             </div>
 
           {% when "card_3" %}
-            <div class="bg-gray-700 p-4 flex justify-around flex-col rounded-[30px] shadow-sm">
+            <div class="bg-gray-700 p-4 flex justify-around flex-col rounded-[30px] shadow-sm" data-aos="fade-down" data-aos-delay="200">
               {% render "icon-weight" %}
               <div>
                 <h2 class="text-4xl text-wrap mb-2">{{ block.settings.title }}</h2>
@@ -62,7 +62,7 @@
             </div>
 
           {% when "card_4" %}
-            <div class="bg-gray-700 p-4 flex justify-around flex-col rounded-[30px] shadow-sm">
+            <div class="bg-gray-700 p-4 flex justify-around flex-col rounded-[30px] shadow-sm" data-aos="fade-down" data-aos-delay="300">
               {% render "icon-sad" %}
               <div>
                 <h2 class="text-4xl text-wrap mb-2">{{ block.settings.title }}</h2>
@@ -71,7 +71,7 @@
             </div>
 
           {% when "card_5" %}
-            <div class="bg-gray-700 p-4 flex justify-around flex-col rounded-[30px] shadow-sm">
+            <div class="bg-gray-700 p-4 flex justify-around flex-col rounded-[30px] shadow-sm" data-aos="fade-down" data-aos-delay="400">
               {% render "icon-love" %}
               <div>
                 <h2 class="text-4xl text-wrap mb-2">{{ block.settings.title }}</h2>
@@ -80,7 +80,7 @@
             </div>
 
           {% when "card_6" %}
-            <div class="bg-gray-700 p-4 flex justify-around flex-col rounded-[30px] shadow-sm">
+            <div class="bg-gray-700 p-4 flex justify-around flex-col rounded-[30px] shadow-sm" data-aos="fade-down" data-aos-delay="500">
               {% render "icon-earth" %}
               <div>
                 <h2 class="text-4xl text-wrap mb-2">{{ block.settings.title }}</h2>

@@ -1,9 +1,24 @@
 {% assign main_menu_linklist = linklists[section.settings.menu].links %}
 
+{% style %}
+.header{
+    transition: all 0.3s;
+}
+
+.header.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+}
+{% endstyle %}
+
 <div class="relative bg-white" x-data="{ mobileMenuOpen: false}" 
 {% comment %} x-cloak {% endcomment %}
 >
-    <div class="mx-auto px-4 sm:px-6">
+    <div class="header mx-auto px-4 sm:px-6">
         <div class="flex justify-between items-center py-6 md:justify-start md:space-x-10">
             <!-- STORE NAME / STORE LOGO -->
             <div class="flex justify-start lg:flex-1 truncate">
@@ -139,6 +154,14 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    window.addEventListener('scroll', function () {
+        var header = document.querySelector('.header');
+
+        header.classList.toggle('sticky', window.scrollY > 0);
+    });
+</script>
 
 {% schema %}
 {

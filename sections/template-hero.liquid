@@ -9,15 +9,15 @@
     {% for block in section.blocks %}
       {% case block.type %}
         {% when "Hero_Heading" %}
-          <h1 class="text-3xl md:text-6xl font-bold md:font-medium max-w-xl">
+          <h1 class="text-3xl md:text-6xl font-bold md:font-medium max-w-xl" data-aos="fade-up">
             {{ section.settings.hero_title }}
           </h1>
 
         {% when "Hero_Subheading" %}
-          <p class="text-xl md:text-2xl max-w-xl py-2">{{ section.settings.hero_subtitle }}</p>
+          <p class="text-xl md:text-2xl max-w-xl py-2" data-aos="fade-up" data-aos-delay="100">{{ section.settings.hero_subtitle }}</p>
 
         {% when "Hero_Button" %}
-          <button type="button" class="text-white bg-black py-3 px-6 rounded-md uppercase font-medium">{{ section.settings.hero_button_text }}</button>
+          <button type="button" class="text-white bg-black py-3 px-6 rounded-md uppercase font-medium" data-aos="fade-up" data-aos-delay="200">{{ section.settings.hero_button_text }}</button>
 
           {% else %}
 

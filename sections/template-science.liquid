@@ -19,7 +19,7 @@
     {% if section.settings.show_dark_mode == true %}
 
     <div class="w-fit flex justify-around items-center bg-gradient-to-b from-gray-300 to-gray-0 p-2 rounded-[15px]
-    [&>p]:px-8 [&>p]:py-2 [&>p]:rounded-[15px] mx-auto my-4 gap-2 [&>p]:cursor-pointer">
+    [&>p]:px-8 [&>p]:py-2 [&>p]:rounded-[15px] mx-auto my-4 gap-2 [&>p]:cursor-pointer" data-aos="zoom-in-up">
       <p @click="darkMode = true" :class="darkMode ? 'bg-black text-white' : 'bg-white text-black'">Day</p>
       <p @click="darkMode = false" :class="!darkMode ? 'bg-black text-white' : 'bg-white text-black'">Night</p>
     </div>
@@ -27,22 +27,22 @@
     {% endif %}
 
     <div class="w-[70%] mx-auto science-header">
-      <h1 :class="!darkMode ? 'text-2xl md:text-5xl text-center my-8 text-white [&>*]:text-white' : 'text-2xl md:text-5xl text-center my-8 text-black [&>*]:text-black'">AYO uses the latest developments in light therapy and Chronobiology to
+      <h1 data-aos="fade-up" :class="!darkMode ? 'text-2xl md:text-5xl text-center my-8 text-white [&>*]:text-white' : 'text-2xl md:text-5xl text-center my-8 text-black [&>*]:text-black'">AYO uses the latest developments in light therapy and Chronobiology to
         <span>empower your day</span>
       </h1>
 
       <div :class="!darkMode ? 'flex justify-between items-center [&>div]:flex [&>div]:justify-center [&>div]:items-center [&>div]:flex-col md:[&>div>h2]:text-2xl gap-4 text-center [&>*]:text-white' : 'flex justify-between items-center [&>div]:flex [&>div]:justify-center [&>div]:items-center [&>div]:flex-col md:[&>div>h2]:text-2xl gap-4 text-center [&>*]:text-black'">
-        <div>
+        <div data-aos="fade-up" data-aos-delay="100">
           {% render "icon-earth" %}
           <h2>Awaken feeling rejuvenated</h2>
         </div>
 
-        <div>
+        <div data-aos="fade-up" data-aos-delay="200">
           {% render "icon-bolt" %}
           <h2>Have more energy</h2>
         </div>
 
-        <div>
+        <div data-aos="fade-up" data-aos-delay="300">
           {% render "icon-sleep" %}
           <h2>Improve your sleep quality</h2>
         </div>

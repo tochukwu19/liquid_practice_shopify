@@ -1,81 +1,128 @@
 {
-    "sections": {
-        "hero": {
-            "type": "template-hero",
-            "blocks": {
-                "heading": {
-                    "type": "Hero_Heading"
-                },
-                "subheading": {
-                    "type": "Hero_Subheading"
-                },
-                "button": {
-                    "type": "Hero_Button"
-                }
-            }, "block_order": [
-                "heading",
-                "subheading",
-                "button"
-            ]
-        }, 
-        "meet": {
-            "type": "template-meet"
+  "sections": {
+    "hero": {
+      "type": "template-hero",
+      "blocks": {
+        "heading": {
+          "type": "Hero_Heading",
+          "settings": {
+          }
         },
-        "features": {
-            "type": "template-features",
-            "blocks": {
-                "card1": {
-                    "type": "card_1",
-                    "title": "Feature 1",
-                    "description": "This is a feature description"
-                },
-                "card2": {
-                    "type": "card_2",
-                    "title": "Feature 2",
-                    "description": "This is a feature description"
-                },
-                "card3": {
-                    "type": "card_3",
-                    "title": "Feature 3",
-                    "description": "This is a feature description"
-                },
-                "card4": {
-                    "type": "card_4",
-                    "title": "Feature 4",
-                    "description": "This is a feature description"
-                },
-                "card5": {
-                    "type": "card_5",
-                    "title": "Feature 5",
-                    "description": "This is a feature description"
-                },
-                "card6": {
-                    "type": "card_6",
-                    "title": "Feature 6",
-                    "description": "This is a feature description"
-                }
-            }, 
-            "block_order": [
-                "card1",
-                "card2",
-                "card3",
-                "card4",
-                "card5",
-                "card6"
-            ]
+        "subheading": {
+          "type": "Hero_Subheading",
+          "settings": {
+          }
         },
-        "works": {
-            "type": "template-works"    
-        },
-        "science": {
-            "type": "template-science"
+        "button": {
+          "type": "Hero_Button",
+          "settings": {
+          }
         }
+      },
+      "block_order": [
+        "heading",
+        "subheading",
+        "button"
+      ],
+      "settings": {
+        "hero_title": "Sleep Better, Boost Energy, Embrace Wellness",
+        "hero_subtitle": "Become healthier, happier, and more active with the World’s First Circadian Health Wearable.",
+        "hero_button_text": "Buy Suo+",
+        "show_sponsors": true
+      }
     },
-    "order": [
-        "hero",
-        "meet",
-        "features",
-        "works",
-        "science"
-    ]
+    "meet": {
+      "type": "template-meet",
+      "settings": {
+        "meet_title": "Meet SUO+",
+        "meet_subtitle_1": "Achieve your health and wellness goals by using your own biology and",
+        "meet_subtitle_2": "the power of circadian light therapy.",
+        "meet_button_text": "Learn more"
+      }
+    },
+    "features": {
+      "type": "template-features",
+      "blocks": {
+        "card1": {
+          "type": "card_1",
+          "settings": {
+            "title": "Sleep Problems",
+            "description": "Misaligned circadian rhythm often is associated with difficulties falling asleep, waking up and excessive daytime sleepiness."
+          }
+        },
+        "card2": {
+          "type": "card_2",
+          "settings": {
+            "title": "Low Energy",
+            "description": "Circadian rhythm disorders are associated with fatigue and reduced cellular energy production."
+          }
+        },
+        "card3": {
+          "type": "card_3",
+          "settings": {
+            "title": "Weight Gain",
+            "description": "An irregular circadian rhythm greatly contributes to obesity, insulin resistance and metabolic disorders."
+          }
+        },
+        "card4": {
+          "type": "card_4",
+          "settings": {
+            "title": "Low Mood",
+            "description": "Circadian disruption often contributes to depression, anxiety, bipolar disorder and seasonal affective disorder."
+          }
+        },
+        "card5": {
+          "type": "card_5",
+          "settings": {
+            "title": "Aging",
+            "description": "Out-of-sync circadian rhythm is associated with aging and morbidity while good circadian health is paramount to longevity."
+          }
+        },
+        "card6": {
+          "type": "card_6",
+          "settings": {
+            "title": "+ Every modern disease",
+            "description": "From cardiovascular disorders to cancer. Sounds incredible? Just Google “circadian rhythm” + any ailment."
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "card5",
+        "card6"
+      ],
+      "settings": {
+      }
+    },
+    "works": {
+      "type": "template-works",
+      "settings": {
+        "works_title": "How it works",
+        "card_1_title": "Align your lifestyle with your biology",
+        "card_1_description": "AYO automatically works to align your lifestyle with your circadian rhythm for better sleep, more energy, and improved health. Enjoy personal recommendations for light exposure, optimal sleep-wake times, mealtimes and many more!",
+        "card_2_title": "Discover your body’s natural rhythm",
+        "card_2_description": "Download the AYO app (early access) to learn about your Circadian Health and find out if you are in sync with your biological clock. Discover your body’s unique sleep-wake cycle and natural sleep need as well as how your natural rhythm impacts your everyday life.",
+        "card_3_title": "Use AYO",
+        "card_3_description": "Awaken body and mind with gentle blue light that stimulates the eyes, boosts your mood and raises energy levels just like a beautiful sunny day outside.",
+        "card_4_title": "Stay in-sync and thrive",
+        "card_4_description": "The AYO app will keep you motivated all year long through seasonal and lifestyle changes. Feel long-lasting improvements as you experience a healthier, happier you."
+      }
+    },
+    "science": {
+      "type": "template-science",
+      "settings": {
+        "show_dark_mode": true
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "meet",
+    "features",
+    "works",
+    "science"
+  ]
 }
