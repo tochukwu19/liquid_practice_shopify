@@ -119,8 +119,11 @@
     },
     "custom_liquid_F7VwWF": {
       "type": "custom-liquid",
+      "custom_css": [
+        "div{margin: 0 auto;}"
+      ],
       "settings": {
-        "custom_liquid": "",
+        "custom_liquid": "<creattie-embed\n src=\"https:\/\/d1jj76g3lut4fe.cloudfront.net\/saved_colors\/92448\/91dn7ugnZb3swTet.json\"\n delay=\"1\"\n speed=\"100\"\n frame_rate=\"24\"\n trigger=\"loop\"\n style=\"width:400px;background-color: \">\n<\/creattie-embed>\n<script src=\"https:\/\/creattie.com\/js\/embed.js?id=3f6954fde297cd31b441\" defer><\/script>",
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 52
