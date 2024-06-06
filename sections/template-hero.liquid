@@ -9,7 +9,7 @@
     {% for block in section.blocks %}
       {% case block.type %}
         {% when "Hero_Heading" %}
-          <h1 class="text-3xl md:text-6xl font-bold md:font-medium max-w-xl">
+          <h1 class="text-3xl md:text-6xl font-bold md:font-medium max-w-xl" data-aos="fade-down">
             {{ section.settings.hero_title }}
           </h1>
 
